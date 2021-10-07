@@ -4,12 +4,7 @@ const array15 = ['js', 'css', 'html',];
 const str = 'html';
 
 function hasElem(arr,str){
-  for (const elem of arr){
-    if (elem ===str){
-      return true;
-    }   
-  }
-  return false;
+  return arr.includes(str)
 }
 
 console.log(hasElem(array15,str))
@@ -18,16 +13,12 @@ console.log(hasElem(array15,str))
 // 2. Дан массив с числами. Проверьте, что в этом массиве есть указанное число. Если есть - вернуть true, а если нет - вернуть false.
 
 const array16 = [1, 2, 3, 4, 5];
-const number = 7;
+const number = 9;
 
 function containsNumber(arr,num){
-  for(const elem of arr){
-    if(Number(elem) === num) {
-      return true
-    }
-  }
-  return false
+  return arr.includes(num);
 }
+
 
 
 console.log(containsNumber(array16,number))
@@ -50,16 +41,16 @@ console.log(hasSameValue(array17))
 
 // 4. Заполните массив 10 случайными числами в диапазоне от 15 до 78. Math.random()
 
-const arrayRandom = []
+const arrayRandom = [];
+const min = 15;
+const max = 78;
 
 function getRandomNumber(max,min) {
   return Math.floor(min + Math.random() * (max + 1 - min));
 }
 
 function addElementsInArray(arr) {
-  const min = 15;
-  const max = 78;
-  for (i=0; i<10; i++){
+  for (let i=0; i<10; i++){
     arr.push(getRandomNumber(max,min))
   }
 }
@@ -69,26 +60,35 @@ console.log(arrayRandom)
 
 // 5. Дан массив 4, -2, 5, 19, -130, 0, 10. Найдите минимальное и максимальное число. 
 
-const array18 = [4, -2, 5, 19, -130, 0, 10]
+const array18 = [4, -2, 5, 19, -130, 0, 10];
 
-
-function findMinMaxNunmer(arr) {
+function findMaxNumber(arr){
   let max = Number.MIN_VALUE;
-  let min = Number.MAX_VALUE;
-
-  for (let index = 0; index < array4.length; index++) {
+  for (let index = 0; index < arr.length; index++) {
   
     if (arr[index] > max) {
       max = arr[index];
     }
+  }
+    return max;
+}
+
+
+function findMinNumber(arr){
+  let min = Number.MAX_VALUE;
+  for (let index = 0; index < arr.length; index++) {
+  
     if (arr[index] < min) {
       min = arr[index];
     }
-}
-return `min: ${min} max: ${max} `
+  }
+    return min;
 }
 
-console.log(findMinMaxNunmer(array18))
+
+console.log(findMaxNumber(array18))
+
+console.log(findMinNumber(array18))
 
 
 
