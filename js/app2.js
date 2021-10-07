@@ -62,33 +62,49 @@ console.log(arrayRandom)
 
 const array18 = [4, -2, 5, 19, -130, 0, 10];
 
-function findMaxNumber(arr){
-  let max = Number.MIN_VALUE;
-  for (let index = 0; index < arr.length; index++) {
-  
-    if (arr[index] > max) {
-      max = arr[index];
-    }
-  }
-    return max;
+// 2 способ
+
+function findMaxNumber2(arr){
+  return Math.min.apply(null, arr)
 }
 
-
-function findMinNumber(arr){
-  let min = Number.MAX_VALUE;
-  for (let index = 0; index < arr.length; index++) {
-  
-    if (arr[index] < min) {
-      min = arr[index];
-    }
-  }
-    return min;
+function findMinNumber2(arr){
+  return Math.max.apply(null, arr)
 }
 
+console.log(findMaxNumber2(array18))
 
-console.log(findMaxNumber(array18))
+console.log(findMinNumber2(array18))
 
-console.log(findMinNumber(array18))
+// 1 способ
+
+// function findMaxNumber(arr){
+//   let max = Number.MIN_VALUE;
+//   for (let index = 0; index < arr.length; index++) {
+  
+//     if (arr[index] > max) {
+//       max = arr[index];
+//     }
+//   }
+//     return max;
+// }
+
+
+// function findMinNumber(arr){
+//   let min = Number.MAX_VALUE;
+//   for (let index = 0; index < arr.length; index++) {
+  
+//     if (arr[index] < min) {
+//       min = arr[index];
+//     }
+//   }
+//     return min;
+// }
+
+
+// console.log(findMaxNumber(array18))
+
+// console.log(findMinNumber(array18))
 
 
 
