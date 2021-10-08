@@ -1,6 +1,6 @@
 // 1. Необходимо создать функцию hasElem, которая параметрами будет принимать массив и строку, и возвращать true, если строка есть в массиве, и false - если нет
 
-const array15 = ['js', 'css', 'html',];
+const array15 = ['js', 'css', 'html'];
 const str = 'html';
 
 function hasElem(arr,str){
@@ -65,11 +65,16 @@ const array18 = [4, -2, 5, 19, -130, 0, 10];
 // 2 способ
 
 function findMaxNumber2(arr){
-  return Math.min.apply(null, arr)
+  if(arr.length>0){
+    return Math.min.apply(null, arr)
+  }
+  
 }
 
 function findMinNumber2(arr){
+  if(arr.length>0){
   return Math.max.apply(null, arr)
+  }
 }
 
 console.log(findMaxNumber2(array18))
@@ -110,15 +115,47 @@ console.log(findMinNumber2(array18))
 
 // 6. Дан массив arr. Найдите среднее арифметическое его элементов. Проверьте задачу на массиве с элементами 12, 15, 20, 25, 59, 79.
 
-const array19 = [2, 15, 20, 25, 59, 79]
+const array19 = [12, 15, 20, 25, 59, 79];
 
-function averageArrayNumbers(arr) {
+
+function averageArrayNumbers2(arr) {
   
-  let sum = arr.reduce(function(sum,current) {
-    return sum+current  
-  })
- 
+  let sum = arr.reduce((a,b) => a + b , 0); 
   return res = sum / arr.length;
 }
 
-console.log(averageArrayNumbers(array19))
+console.log(averageArrayNumbers2(array19))
+
+
+// 2 способ
+
+
+function sumArr(arr){
+  let sum= 0;
+ for (el of arr){
+    sum += el;
+ }
+ return res = sum / arr.length;
+}
+
+
+
+console.log(sumArr(array19))
+
+
+
+// function averageArrayNumbers(arr) {
+  
+//   let sum = arr.reduce(function(sum,current) {
+//     return (sum+current); 
+//   })
+ 
+//   return res = sum / arr.length;
+// }
+
+// console.log(averageArrayNumbers(array19))
+
+
+
+
+
