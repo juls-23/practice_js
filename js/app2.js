@@ -77,6 +77,10 @@ function findMinNumber2(arr){
   }
 }
 
+function MinMax(arr){
+  return `min: ${findMinNumber2(arr)} max: ${findMaxNumber2(arr)} `
+}
+
 console.log(findMaxNumber2(array18))
 
 console.log(findMinNumber2(array18))
